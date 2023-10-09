@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Stanford-ORB: Real-World 3D Object Inverse Rendering Benchmark</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <link rel="stylesheet" href="./resources/bootstrap.min.css">
+    <link rel="stylesheet" href="./resources/font-awesome.min.css">
+    <link rel="stylesheet" href="./resources/codemirror.min.css">
+    <link rel="stylesheet" href="./resources/app.css">
+    <link rel="stylesheet" href="./resources/bootstrap.min(1).css">
+
+    <script src="./resources/jquery.min.js"></script>
+    <script src="./resources/bootstrap.min.js"></script>
+    <script src="./resources/codemirror.min.js"></script>
+    <script src="./resources/clipboard.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script async="" src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+            "three/controls/OrbitControls": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js",
+            "three/libs/stats": "https://unpkg.com/three@0.156.1/examples/jsm/libs/stats.module.js"
+          }
+        }
+      </script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <style>
+        model-viewer {
+          width: 600px;
+          height: 600px;
+        }
+      </style>
+    <script src="./resources/app.js"></script>
+</head>
+
+
+<body>
+<div class="container" id="main">    
+    <div class="col-md-8 col-md-offset-2">
+        <img src="./resources/logo.png" class="img-responsive" alt="Logo">
+    </div>
+    <div class="row">
+        <h1 class="col-md-12 text-center" style="margin-bottom:2px">
+            Stanford-ORB: Real-World 3D Object Inverse Rendering Benchmark<br>
+        </h1>
+    </div>
+    <h4 class="col-md-12 text-center">
+    Neurips 2023 Dataset & Benchmark Track
+    </h4>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <ul class="list-inline" style="margin-bottom:2px">
+                <li>
+                    <a href="https://zhengfeikuang.com">
+                        Zhengfei Kuang*
+                    </a>
+                </li>
+                <li>
+                    <a href="https://cs.stanford.edu/~yzzhang/">
+                        Yunzhi Zhang*
+                    </a>
+                </li>
+                <li>
+                    <a href="https://kovenyu.com/">
+                        Hong-Xing "Koven" Yu
+                    </a>
+                </li>
+                <li>
+                    <a href="https://samiragarwala.github.io/">
+                        Samir Agarwala
+                    </a>
+                </li>
+                <li>
+                    <a href="https://elliottwu.com/">
+                        Shangzhe Wu
+                    </a>
+                </li>
+                <li>
+                    <a href="https://jiajunwu.com/">
+                        Jiajun Wu
+                    </a>
+                </li>
+            </ul>
+            <p class="text-center">
+            Stanford University
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href="https://arxiv.org/abs/2201.02533">
+                        <img src="resources/paper-min.png" height="60px">
+                        <h4><strong>Paper</strong></h4>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="https://youtu.be/qOfV35y_ppc">
+                        <img src="resources/youtube_icon.png" height="60px">
+                        <h4><strong>Video</strong></h4>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="https://github.com/snap-research/NeROIC">
+                        <img src="resources/dataset_icon.png" height="60px"/>
+                        <h4><strong>Dataset</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/StanfordORB/Stanford-ORB">
+                        <img src="resources/github.png" height="60px"/>
+                        <h4><strong>Code</strong></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <model-viewer src="./model/Astronaut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./model/poster.webp" shadow-intensity="1">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                    View in your space
+                </button>
+                <div id="ar-prompt">
+                    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                </div>
+            </model-viewer>
+            <h3>
+                TL;DR
+            </h3>
+            <p class="text-justify">
+                We present a novel real-world 3D Object inverse Rendering Benchmark, <b>Stanford-ORB</b>, to evaluate object inverse rendering methods. 
+                The benchmark consists of:
+                <ul>
+                    <li><b>2,795</b> HDR images of <b>14</b> objects captured in <b>7</b> in-the-wild scenes;</li>
+                    <li><b>418</b> HDR ground truth environment maps aligned with image captures;</li>
+                    <li>Studio captured textured mesh of all objects;</li>
+                    <li>A set of comphehensive benchmarks for inverse rendering evaluation;</li>
+                </ul>
+        
+            </p>
+            <p class="text-justify">
+                <b>The benchmark is set to be plug & play</b> -- all data has been cleaned and organized in the most common structures (i.e. Blender, LLFF, Colmap).
+                We also provide the scripts for dataloading and evaluation, along with the results from various state-of-the-art methods.
+                To test your model, check our github page for more details.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Qualitative Results
+            </h3>
+
+            <p class="text-justify">
+                We show selected qualitative results of all baselines on our dataset. </p>
+            <br> 
+        </div>           
+        
+        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
+        <div class="col-md-8 col-md-offset-2">
+            <img src="./resources/qualitative.png" class="img-responsive" alt="Novel View Synthesis"><br>
+        </div>    
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Overview
+            </h3>
+            <img src="./resources/framework.png" class="img-responsive" alt="Overview"><br>
+            <p class="text-justify">
+                Our two-stage model takes images of an object from different conditions as input. 
+                With the camera poses of images and object foreground masks acquired by other state-of-the-art methods, 
+                we first optimize the geometry of scanned object and refine camera poses by training a NeRF-based network; 
+                We then compute the surface normal from the geometry (represented by density function) using our normal extraction layer;
+                Finally, our second stage model decomposes the material properties of the object and solves for the lighting conditions for each image. 
+            </p>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+	    <div class="col-xs-12" style="height:20px;"></div>
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Novel View Synthesis
+            </h3>
+            <p class="text-justify">
+                Given online images from a common object, our model can synthesize novel views of the object 
+                with the lighting conditions from the training images. </p>
+            <br> 
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+            <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
+                <source src="videos/nvs.mp4"
+                        type="video/mp4"/>
+            </video>
+        </div>
+
+        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
+        <div class="col-md-8 col-md-offset-2">
+            <img src="./resources/nvs.png" class="img-responsive" alt="Novel View Synthesis"><br>
+        </div>
+    </div>
+
+    <div class="row">
+	    <div class="col-xs-12" style="height:20px;"></div>
+
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Material Decomposition
+            </h3>
+            <p class="text-justify">
+                Our model also solves the material properties (including Albedo, Specularity and Roughness maps) and surface normal of the captured object. 
+            <br>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+            <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
+                <source src="videos/material.mp4"
+                        type="video/mp4"/>
+            </video>
+        </div>  
+        
+        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
+        <div class="col-md-8 col-md-offset-2">
+            <img src="./resources/material.png" class="img-responsive" alt="Material Decomposition"><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12" style="height:20px;"></div>
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Relighting
+            </h3>
+            <p class="text-justify">
+                With the material properties and geometry generated from our model, we can further render the object with novel lighting environments. 
+            <br>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+            <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
+                <source src="videos/relighting.mp4"
+                        type="video/mp4"/>
+            </video>
+        </div>  
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Citation
+            </h3>
+        </div>
+    </div>
+
+    <!-- <div class="col-md-8 col-md-offset-2">
+      <pre><code>@article{10.1145/3528223.3530177,
+        author = {Kuang, Zhengfei and Olszewski, Kyle and Chai, Menglei and Huang, Zeng and Achlioptas, Panos and Tulyakov, Sergey},
+        title = {NeROIC: Neural Rendering of Objects from Online Image Collections},
+        year = {2022},
+        issue_date = {July 2022},
+        publisher = {Association for Computing Machinery},
+        address = {New York, NY, USA},
+        volume = {41},
+        number = {4},
+        issn = {0730-0301},
+        url = {https://doi.org/10.1145/3528223.3530177},
+        doi = {10.1145/3528223.3530177},
+        journal = {ACM Trans. Graph.},
+        month = {jul},
+        articleno = {56},
+        numpages = {12},
+        keywords = {neural rendering, reflectance & shading models, multi-view & 3D}
+        }</code></pre>
+    </div> -->
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" >
+        <p style="color:gray; text-align:right" >
+            The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+        </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
