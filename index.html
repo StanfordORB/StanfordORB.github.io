@@ -36,8 +36,8 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
     <style>
         model-viewer {
-          width: 600px;
-          height: 600px;
+          width: 300px;
+          height: 300px;
         }
       </style>
     <script src="./resources/app.js"></script>
@@ -127,9 +127,16 @@
             </ul>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Gallary
+            </h3>
+        </div>           
+        
+        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
+        <div class="col-md-12 col-md-offset-2">
             <model-viewer src="./model/Astronaut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./model/poster.webp" shadow-intensity="1">
                 <div class="progress-bar hide" slot="progress-bar">
                     <div class="update-bar"></div>
@@ -137,10 +144,13 @@
                 <button slot="ar-button" id="ar-button">
                     View in your space
                 </button>
-                <div id="ar-prompt">
-                    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-                </div>
             </model-viewer>
+        </div>    
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
             <h3>
                 TL;DR
             </h3>
@@ -148,7 +158,7 @@
                 We present a novel real-world 3D Object inverse Rendering Benchmark, <b>Stanford-ORB</b>, to evaluate object inverse rendering methods. 
                 The benchmark consists of:
                 <ul>
-                    <li><b>2,795</b> HDR images of <b>14</b> objects captured in <b>7</b> in-the-wild scenes;</li>
+                    <li><b>2,795</b> HDR images of <b>14</b> objects captured in <b>7</b> in-the-wild scenes (each object is captured in <b>3</b> scenes);</li>
                     <li><b>418</b> HDR ground truth environment maps aligned with image captures;</li>
                     <li>Studio captured textured mesh of all objects;</li>
                     <li>A set of comphehensive benchmarks for inverse rendering evaluation;</li>
@@ -166,8 +176,54 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                Qualitative Results
+                Overview
             </h3>
+            <img src="./resources/overview.jpg" class="img-responsive" alt="Overview"><br>
+            <p class="text-justify">
+                The figure shows the overall pipeline of data capture. For each object,
+                <i>Left</i>: we obtain its 3D shape using
+                a 3D scanner and Physics-Based Rendering (PBR) materials using high-quality light box images.
+                <i>Middle</i>: we also capture multi-view masked images in 3 different in-the-wild scenes, together with
+                the ground-truth environment maps. <i>Right</i>: we carefully register the camera poses for all images
+                using the scanned mesh and recovered materials, and prepare the data for the evaluation benchmarks.
+                Credit to Maurice Svay for the low-poly camera mesh model.
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Benchmark Design & Results
+            </h3>
+
+            <p class="text-justify">
+                Our benchmark is based on single-scene reconstrution. 
+                Specifically, the tested model should be trained with one of our datapoint (i.e. images of one object captured in one scene) at a time,
+                before being evaluted by the following evaluations:
+                <ul>
+                    <li><i>Novel View Synthesis</i>: Evaluating the inferred novel views in the same scene;</li>
+                    <li><i>Novel Scene Relighting</i>: Evaluating the inferred novel views in novel scenes, given ground-truth environment map;</li>
+                    <li><i>Geometry Estimation</i>: Evaluating the reconstructed 3D geometry.</li>
+                </ul>
+                
+                Considering the fact that many inverse rendering methods are time extensive, we provide two configurations of our benchmark:
+                <ul>
+                    <li><i>Stanford-ORB-Full</i>, where the model should be trained on all datapoints (14x3 in total);</li>
+                    <li><i>Stanford-ORB-Light</i>, where the model only needs to be trained on selected datapoints (7x1 in total);</li>
+                </ul>
+                For more details, please refer to our <a href="https://github.com/StanfordORB/Stanford-ORB">github page</a>. Below we show our results on state-of-the-art baselines. </p>
+            <br> 
+        </div>           
+        
+        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
+        <div class="col-md-8 col-md-offset-2">
+            <img src="./resources/qualitative.png" class="img-responsive" alt="Novel View Synthesis"><br>
+        </div>    
+
+        <div class="col-md-8 col-md-offset-2">
+
 
             <p class="text-justify">
                 We show selected qualitative results of all baselines on our dataset. </p>
@@ -180,6 +236,29 @@
         </div>    
     </div>
 
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Download Links
+            </h3>
+
+            <p class="text-justify">
+                For convenience, we provide separate download links for images organized in different data structures and the auxiliary files. 
+            </p>
+
+            <br> 
+        </div>           
+        
+    </div>    
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Citation
+            </h3>
+        </div>
+    </div> 
+<!-- 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
@@ -272,7 +351,7 @@
                 Citation
             </h3>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="col-md-8 col-md-offset-2">
       <pre><code>@article{10.1145/3528223.3530177,
