@@ -36,8 +36,8 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
     <style>
         model-viewer {
-          width: 200px;
-          height: 200px;
+          width: 300px;
+          height: 300px;
         }
       </style>
     <script src="./resources/app.js"></script>
@@ -132,7 +132,7 @@
         <div class="col-md-8 col-md-offset-2">
 
             <h3>
-                TL;DR
+                <b>TL;DR</b>
             </h3>
             <p class="text-justify">
                 We present a novel real-world 3D Object inverse Rendering Benchmark, <b>Stanford-ORB</b>, to evaluate object inverse rendering methods. 
@@ -156,108 +156,90 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                Gallary
+                <b>Gallary</b>
             </h3>
+            <h4>Scanned Meshes</h4>
         </div>        
 
         <div class="row">
-            <div class="col-md-2 col-md-offset-2 mb-4 mb-lg-0">
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-            </div>
-          
-            <div class="col-md-2 mb-4 mb-lg-0">
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-            </div>
-          
-            <div class="col-md-2 mb-4 mb-lg-0">
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-            </div>          
-            <div class="col-md-2 mb-4 mb-lg-0">
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-                <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
-                    </button>
-                </model-viewer>
-            </div>
+            <div class="col-md-10 col-md-offset-1 mb-4" style="text-align: center">
+                <div class="col-md-4">
+                    <model-viewer src="./model/ball.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                    <p><i>Ball</i></p>
+                    <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                    <p><i>Baking</i></p>
+                </div>
+            
+                <div class="col-md-4">
+                    <model-viewer src="./model/gnome.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                    <p><i>Gnome</i></p>
+                    <model-viewer src="./model/grogu.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                    <p><i>Grogu</i></p>
+                </div>
+            
+                <div class="col-md-4">
+                    <model-viewer src="./model/car.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                    <p><i>Car</i></p>
+                    <model-viewer src="./model/pepsi.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                    <p><i>Pepsi</i></p>
+                </div>    
+            </div>      
         </div>
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2">          
+            <h4>Image Captures</h4>
             <img src="./resources/image_gallary.jpg" class="img-responsive" alt="Image Gallary"><br>
         </div>  
 
-        <div class="col-md-12 col-md-offset-2">
-            <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-                <div class="progress-bar hide" slot="progress-bar">
-                    <div class="update-bar"></div>
-                </div>
-                <button slot="ar-button" id="ar-button">
-                    View in your space
-                </button>
-            </model-viewer>
-        </div>    
     </div>
 
     
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                Overview
+                <b>Overview</b>
             </h3>
             <img src="./resources/overview.jpg" class="img-responsive" alt="Overview"><br>
             <p class="text-justify">
@@ -276,7 +258,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                Benchmark Design & Results
+                <b>Benchmark Design & Results</b>
             </h3>
 
             <p class="text-justify">
@@ -289,7 +271,7 @@
                     <li><i>Geometry Estimation</i>: Evaluating the reconstructed 3D geometry.</li>
                 </ul>
                 
-                Furthermore, considering that many inverse rendering methods are time extensive, we hereby provide two configurations of the benchmark:
+                Furthermore, considering that many inverse rendering methods are compute-intensive, we hereby provide two configurations of the benchmark:
                 <ul>
                     <li><i>Stanford-ORB-Full</i>, where the model is required to be trained on all datapoints (14x3 in total);</li>
                     <li><i>Stanford-ORB-Light</i>, where the model only needs to be trained on selected datapoints (7x1 in total);</li>
@@ -323,7 +305,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                Download Links
+                <b>Download Links</b>
             </h3>
 
             <p class="text-justify">
@@ -338,7 +320,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                Citation
+                <b>Citation</b>
             </h3>
         </div>
     </div> 
