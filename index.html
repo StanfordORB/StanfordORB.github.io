@@ -199,23 +199,26 @@
             </h3>
 
             <p class="text-justify">
-                Our benchmark is based on single-scene reconstrution. 
-                Specifically, the tested model should be trained with one of our datapoint (i.e. images of one object captured in one scene) at a time,
-                before being evaluted by the following evaluations:
+                Our benchmark is based on the single-scene reconstrution. 
+                That means, to test a model, it should be trained with one of our datapoints (i.e. images of one object captured in one scene) and being evaluted at a time.
+                . The evaluation includes:
                 <ul>
                     <li><i>Novel View Synthesis</i>: Evaluating the inferred novel views in the same scene;</li>
                     <li><i>Novel Scene Relighting</i>: Evaluating the inferred novel views in novel scenes, given ground-truth environment map;</li>
                     <li><i>Geometry Estimation</i>: Evaluating the reconstructed 3D geometry.</li>
                 </ul>
                 
-                Considering the fact that many inverse rendering methods are time extensive, we provide two configurations of our benchmark:
+                Furthermore, considering that many inverse rendering methods are time extensive, we hereby provide two configurations of the benchmark:
                 <ul>
-                    <li><i>Stanford-ORB-Full</i>, where the model should be trained on all datapoints (14x3 in total);</li>
+                    <li><i>Stanford-ORB-Full</i>, where the model is required to be trained on all datapoints (14x3 in total);</li>
                     <li><i>Stanford-ORB-Light</i>, where the model only needs to be trained on selected datapoints (7x1 in total);</li>
                 </ul>
-                For more details, please refer to our <a href="https://github.com/StanfordORB/Stanford-ORB">github page</a>. Below we show our results on state-of-the-art baselines. </p>
-            <br> 
-        </div>           
+                For more details, please refer to our <a href="https://github.com/StanfordORB/Stanford-ORB">github page</a>. Below we show our precomputed results of the state-of-the-art baselines. </p>
+            <br>         
+            TODO: results
+
+        </div>        
+        
         
         <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
         <div class="col-md-8 col-md-offset-2">
@@ -243,7 +246,7 @@
             </h3>
 
             <p class="text-justify">
-                For convenience, we provide separate download links for images organized in different data structures and the auxiliary files. 
+                For convenience proposes, we provide separate download links for images organized in different data structures, and the auxiliary files. 
             </p>
 
             <br> 
