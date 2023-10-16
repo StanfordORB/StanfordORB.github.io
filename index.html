@@ -164,7 +164,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 mb-4" style="text-align: center">
                 <div class="col-md-4">
-                    <model-viewer src="./model/grogu.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                    <model-viewer src="./model/grogu.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" scale="0.7 0.7 0.7" >
                         <div class="progress-bar hide" slot="progress-bar">
                             <div class="update-bar"></div>
                         </div>
@@ -173,7 +173,7 @@
                         </button>
                     </model-viewer>
                     <p><i>Grogu</i></p>
-                    <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                    <model-viewer src="./model/baking.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" scale="0.7 0.7 0.7">
                         <div class="progress-bar hide" slot="progress-bar">
                             <div class="update-bar"></div>
                         </div>
@@ -185,7 +185,7 @@
                 </div>
             
                 <div class="col-md-4">
-                    <model-viewer src="./model/gnome.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                    <model-viewer src="./model/gnome.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" scale="0.7 0.7 0.7">
                         <div class="progress-bar hide" slot="progress-bar">
                             <div class="update-bar"></div>
                         </div>
@@ -194,7 +194,7 @@
                         </button>
                     </model-viewer>
                     <p><i>Gnome</i></p>
-                    <model-viewer src="./model/ball.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                    <model-viewer src="./model/ball.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" scale="0.5 0.5 0.5">
                         <div class="progress-bar hide" slot="progress-bar">
                             <div class="update-bar"></div>
                         </div>
@@ -206,7 +206,7 @@
                 </div>
             
                 <div class="col-md-4">
-                    <model-viewer src="./model/car.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                    <model-viewer src="./model/car.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" scale="0.5 0.5 0.5">
                         <div class="progress-bar hide" slot="progress-bar">
                             <div class="update-bar"></div>
                         </div>
@@ -215,7 +215,7 @@
                         </button>
                     </model-viewer>
                     <p><i>Car</i></p>
-                    <model-viewer src="./model/pepsi.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
+                    <model-viewer src="./model/pepsi.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" scale="0.5 0.5 0.5">
                         <div class="progress-bar hide" slot="progress-bar">
                             <div class="update-bar"></div>
                         </div>
@@ -276,23 +276,15 @@
                     <li><i>Stanford-ORB-Full</i>, where the model is required to be trained on all datapoints (14x3 in total);</li>
                     <li><i>Stanford-ORB-Light</i>, where the model only needs to be trained on selected datapoints (7x1 in total);</li>
                 </ul>
-                For more details, please refer to our <a href="https://github.com/StanfordORB/Stanford-ORB">github page</a>. Below we show our precomputed results of the state-of-the-art baselines. </p>
+                Here we show selected qualitative results of the baselines. For quantitative results and more details of our benchmark, 
+                please refer to our <a href="https://github.com/StanfordORB/Stanford-ORB">github page</a>.
             <br>         
-            TODO: results
 
         </div>        
-        
-        
-        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
-        <div class="col-md-8 col-md-offset-2">
-            <img src="./resources/qualitative.png" class="img-responsive" alt="Novel View Synthesis"><br>
-        </div>    
 
         <div class="col-md-8 col-md-offset-2">
-
-
             <p class="text-justify">
-                We show selected qualitative results of all baselines on our dataset. </p>
+                 </p>
             <br> 
         </div>           
         
@@ -324,121 +316,6 @@
             </h3>
         </div>
     </div> 
-<!-- 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                Overview
-            </h3>
-            <img src="./resources/framework.png" class="img-responsive" alt="Overview"><br>
-            <p class="text-justify">
-                Our two-stage model takes images of an object from different conditions as input. 
-                With the camera poses of images and object foreground masks acquired by other state-of-the-art methods, 
-                we first optimize the geometry of scanned object and refine camera poses by training a NeRF-based network; 
-                We then compute the surface normal from the geometry (represented by density function) using our normal extraction layer;
-                Finally, our second stage model decomposes the material properties of the object and solves for the lighting conditions for each image. 
-            </p>
-            </p>
-        </div>
-    </div>
-
-    <div class="row">
-	    <div class="col-xs-12" style="height:20px;"></div>
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                Novel View Synthesis
-            </h3>
-            <p class="text-justify">
-                Given online images from a common object, our model can synthesize novel views of the object 
-                with the lighting conditions from the training images. </p>
-            <br> 
-        </div>
-
-        <div class="col-md-8 col-md-offset-2">
-            <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
-                <source src="videos/nvs.mp4"
-                        type="video/mp4"/>
-            </video>
-        </div>
-
-        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
-        <div class="col-md-8 col-md-offset-2">
-            <img src="./resources/nvs.png" class="img-responsive" alt="Novel View Synthesis"><br>
-        </div>
-    </div>
-
-    <div class="row">
-	    <div class="col-xs-12" style="height:20px;"></div>
-
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                Material Decomposition
-            </h3>
-            <p class="text-justify">
-                Our model also solves the material properties (including Albedo, Specularity and Roughness maps) and surface normal of the captured object. 
-            <br>
-        </div>
-
-        <div class="col-md-8 col-md-offset-2">
-            <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
-                <source src="videos/material.mp4"
-                        type="video/mp4"/>
-            </video>
-        </div>  
-        
-        <div class="col-xs-8 col-md-offset-2" style="height:40px;"></div>
-        <div class="col-md-8 col-md-offset-2">
-            <img src="./resources/material.png" class="img-responsive" alt="Material Decomposition"><br>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12" style="height:20px;"></div>
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                Relighting
-            </h3>
-            <p class="text-justify">
-                With the material properties and geometry generated from our model, we can further render the object with novel lighting environments. 
-            <br>
-        </div>
-
-        <div class="col-md-8 col-md-offset-2">
-            <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
-                <source src="videos/relighting.mp4"
-                        type="video/mp4"/>
-            </video>
-        </div>  
-    </div>
-    
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                Citation
-            </h3>
-        </div>
-    </div> -->
-
-    <!-- <div class="col-md-8 col-md-offset-2">
-      <pre><code>@article{10.1145/3528223.3530177,
-        author = {Kuang, Zhengfei and Olszewski, Kyle and Chai, Menglei and Huang, Zeng and Achlioptas, Panos and Tulyakov, Sergey},
-        title = {NeROIC: Neural Rendering of Objects from Online Image Collections},
-        year = {2022},
-        issue_date = {July 2022},
-        publisher = {Association for Computing Machinery},
-        address = {New York, NY, USA},
-        volume = {41},
-        number = {4},
-        issn = {0730-0301},
-        url = {https://doi.org/10.1145/3528223.3530177},
-        doi = {10.1145/3528223.3530177},
-        journal = {ACM Trans. Graph.},
-        month = {jul},
-        articleno = {56},
-        numpages = {12},
-        keywords = {neural rendering, reflectance & shading models, multi-view & 3D}
-        }</code></pre>
-    </div> -->
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2" >
