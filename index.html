@@ -303,8 +303,32 @@
             <p class="text-justify">
                 For convenience proposes, we provide separate download links for images organized in different data structures, and the auxiliary files. 
             </p>
+            <ul>
+                <li>
+                    <a href="https://downloads.cs.stanford.edu/viscam/StanfordORB/blender_LDR.tar.gz">blender_LDR.tar.gz</a> (11G): 
+                    LDR images and camera files (organized as the Blender Dataset structure);
+                </li>
+                <li>
+                    <a href="https://downloads.cs.stanford.edu/viscam/StanfordORB/blender_HDR.tar.gz">blender_HDR.tar.gz</a> (72G): 
+                    HDR images and camera files (organized as the Blender Dataset structure);
 
-            <br> 
+                </li>
+                <li>
+                    <a href="https://downloads.cs.stanford.edu/viscam/StanfordORB/llff_colmap_LDR.tar.gz">llff_colmap_LDR.tar.gz</a> (11G): 
+                    LDR images and camera files (organized as the LLFF Dataset structure and as the Colmap's structure);
+                </li>
+                <li>
+                    <a href="https://downloads.cs.stanford.edu/viscam/StanfordORB/llff_colmap_HDR.tar.gz">llff_colmap_HDR.tar.gz</a> (72G): 
+                    HDR images and camera files (organized as the LLFF Dataset structure and as the Colmap's structure); 
+                </li>               
+                <li>
+                    <a href="https://downloads.cs.stanford.edu/viscam/StanfordORB/ground_truth.tar.gz">ground_truth.tar.gz</a> (4.8G): 
+                    GT environment maps, 3D meshes, depth maps, normal maps, and pesudo-gt albedo maps. 
+                </li>         
+            </ul>
+            If your model prefers the Blender Dataset, download blender_LDR.tar.gz, blender_HDR.tar.gz and ground_truth.tar.gz. 
+            Otherwise download llff_colmap_LDR.tar.gz, llff_colmap_HDR.tar.gz and ground_truth.tar.gz. Notice that the HDR dataset is also required 
+            for HDR evaluations even if your model runs in LDR.
         </div>           
         
     </div>    
