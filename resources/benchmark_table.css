@@ -1,0 +1,25 @@
+.table_title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: rgb(77, 79, 83);
+    text-align: center;
+}
+
+.table_head {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: rgb(77, 79, 83);
+    text-align: center;
+}
+
+.table_elem {
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: rgb(77, 79, 83);
+    text-align: center;
+    align-self: center;
+}
+
+.table_emph {
+    font-weight: 700;
+}
