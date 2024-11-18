@@ -292,13 +292,13 @@
             </h3>
             <h4>Quantitative Results</h4>
         </div>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 ">
             <br>
             <div class="table-responsive">
             <table class="table">
                 <thead>
                 <tr>
-                    <th class="table_head align-middle" scope="col">Method</th>
+                    <th class="table_head align-middle" colspan="2" scope="col">Method</th>
                     <th class="table_head align-middle" colspan="3" scope="col">Geometry Estimation</th>
                     <th class="table_head align-middle" colspan="4" scope="col">Novel Scene Relighting</th>
                     <th class="table_head align-middle" colspan="4" scope="col">Novel View Synthesis</th>
@@ -306,6 +306,8 @@
                 <tr>
                     <td class="table_elem align-middle"></td>
         
+                    <td class="table_elem align-middle">Training Views</td>
+
                     <td class="table_elem align-middle">Depth<span>&#8595;</span></td>
                     <td class="table_elem align-middle">Geometry<span>&#8595;</span></td>
                     <td class="table_elem align-middle">Shape<span>&#8595;</span></td>
@@ -323,38 +325,61 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <th class="table_elem align-middle" colspan="12" scope="col" style="padding: 5px">Latest Methods</th>
+                    <th class="table_elem align-middle table_emph" colspan="14" scope="col" style="padding: 5px">Latest Methods</th>
                 </tr>                  
                 <tr>
-                    <td class="table_elem"><a href="https://neural-pbir.github.io/">Neural-PBIR</a></td>
-                    <td class="table_elem table_emph">0.30</td>
+                    <td class="table_elem"><a href="https://neural-pbir.github.io/">Neural-PBIR <p></p>(ICCV 2023)</a></td>
+                    <td class="table_elem ">All</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.30</td>
                     <td class="table_elem">0.06</td>
                     <td class="table_elem">0.43</td>
-                    <td class="table_elem table_emph">26.01</td>
-                    <td class="table_elem table_emph">33.26</td>
-                    <td class="table_elem table_emph">0.979</td>
-                    <td class="table_elem table_emph">0.023</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">26.01</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">33.26</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.979</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.023</td>
                     <td class="table_elem">28.82</td>
                     <td class="table_elem">36.80</td>
                     <td class="table_elem">0.986</td>
                     <td class="table_elem">0.019</td>
+                </tr>                
+                <tr>
+                    <td class="table_elem"><a href="https://illuminerf.github.io/">IllumiNeRF <p></p>(Neurips 2024)</a></td>
+                    <td class="table_elem ">All</td>
+                    <td class="table_elem align-middle" colspan="3">N/A</td>
+                    <td class="table_elem">25.56</td>
+                    <td class="table_elem">32.74</td>
+                    <td class="table_elem">0.976</td>
+                    <td class="table_elem">0.027</td>
+                    <td class="table_elem align-middle" colspan="4">N/A</td>
+                </tr>    
+                <tr>
+                    <td class="table_elem"><a href="https://relit-LRM.github.io/">RelitLRM </a></td>
+                    <td class="table_elem">6</td>
+                    <td class="table_elem align-middle" colspan="3">N/A</td>
+                    <td class="table_elem">24.67</td>
+                    <td class="table_elem">31.52</td>
+                    <td class="table_elem">0.969</td>
+                    <td class="table_elem">0.032</td>
+                    <td class="table_elem align-middle" colspan="4">N/A</td>
                 </tr>
                 <tr>
-                    <th class="table_elem align-middle" colspan="12" scope="col" style="padding: 5px">Novel View Synthesis / 3D Reconstruction Methods</th>
+                    <th class="table_elem align-middle table_emph" colspan="14" scope="col" style="padding: 5px">Novel View Synthesis / 3D Reconstruction Methods</th>
                 </tr>  
                 <tr>
                     <td class="table_elem">IDR</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">0.35</td>
                     <td class="table_elem">0.05</td>
-                    <td class="table_elem table_emph">0.30</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.30</td>
                     <td class="table_elem align-middle" colspan="4">N/A</td>
-                    <td class="table_elem table_emph">30.11</td>
-                    <td class="table_elem table_emph">39.66</td>
-                    <td class="table_elem table_emph">0.990</td>
-                    <td class="table_elem table_emph">0.017</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">30.11</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">39.66</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.990</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.017</td>
                 </tr>
                 <tr>
                     <td class="table_elem">NeRF</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">2.19</td>
                     <td class="table_elem">0.62</td>
                     <td class="table_elem">62.05</td>
@@ -365,10 +390,11 @@
                     <td class="table_elem">0.044</td>
                 </tr>                
                 <tr>
-                    <th class="table_elem align-middle" colspan="12" scope="col" style="padding: 5px">Material Decomposition Methods</th>
+                    <th class="table_elem align-middle table_emph" colspan="14" scope="col" style="padding: 5px">Material Decomposition Methods</th>
                 </tr> 
                 <tr>
                     <td class="table_elem">Neural-PIL</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">0.86</td>
                     <td class="table_elem">0.29</td>
                     <td class="table_elem">4.14</td>
@@ -380,6 +406,7 @@
                 </tr>                
                 <tr>
                     <td class="table_elem">PhySG</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">1.90</td>
                     <td class="table_elem">0.17</td>
                     <td class="table_elem">9.28</td>
@@ -396,6 +423,7 @@
                 </tr>
                 <tr>
                     <td class="table_elem">NVDiffRec</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">0.31</td>
                     <td class="table_elem">0.06</td>
                     <td class="table_elem">0.62</td>
@@ -412,6 +440,7 @@
                 </tr>
                 <tr>
                     <td class="table_elem">NeRD</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">1.39</td>
                     <td class="table_elem">0.28</td>
                     <td class="table_elem">13.70</td>
@@ -428,6 +457,7 @@
                 </tr>
                 <tr>
                     <td class="table_elem">NeRFactor</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">0.87</td>
                     <td class="table_elem">0.29</td>
                     <td class="table_elem">9.53</td>
@@ -444,6 +474,7 @@
                 </tr>                
                 <tr>
                     <td class="table_elem">InvRender</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">0.59</td>
                     <td class="table_elem">0.06</td>
                     <td class="table_elem">0.44</td>
@@ -460,8 +491,9 @@
                 </tr>                 
                 <tr>
                     <td class="table_elem">NVDiffRecMC</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem">0.32</td>
-                    <td class="table_elem table_emph">0.04</td>
+                    <td class="table_elem table_emph" style="color:#FF0000">0.04</td>
                     <td class="table_elem">0.51</td>
 
                     <td class="table_elem">24.43</td>
@@ -475,10 +507,11 @@
                     <td class="table_elem">0.028</td>
                 </tr>                 
                 <tr>
-                    <th class="table_elem align-middle" colspan="12" scope="col" style="padding: 5px">Single-View Prediction Methods</th>
+                    <th class="table_elem align-middle table_emph" colspan="14" scope="col" style="padding: 5px">Single-View Prediction Methods</th>
                 </tr>         
                 <tr>
                     <td class="table_elem">SI-SVBRDF</td>
+                    <td class="table_elem">1</td>
                     <td class="table_elem">81.48</td>
                     <td class="table_elem">0.29</td>
                     <td class="table_elem">N/A</td>
@@ -487,6 +520,7 @@
                 </tr>                
                 <tr>
                     <td class="table_elem">SIRFS</td>
+                    <td class="table_elem">1</td>
                     <td class="table_elem">N/A</td>
                     <td class="table_elem">0.59</td>
                     <td class="table_elem">N/A</td>
@@ -494,10 +528,11 @@
                     <td class="table_elem align-middle" colspan="4">N/A</td>
                 </tr>                 
                 <tr>
-                    <th class="table_elem align-middle" colspan="12" scope="col" style="padding: 5px">Reference Results</th>
+                    <th class="table_elem align-middle table_emph" colspan="14" scope="col" style="padding: 5px">Reference Results</th>
                 </tr>                  
                 <tr>
                     <td class="table_elem">NVDiffRecMC+GT Mesh</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem align-middle" colspan="3">N/A</td>
                     <td class="table_elem">25.08</td>
                     <td class="table_elem">32.28</td>
@@ -507,6 +542,7 @@
                 </tr>                  
                 <tr>
                     <td class="table_elem">NVDiffRec+GT Mesh</td>
+                    <td class="table_elem ">All</td>
                     <td class="table_elem align-middle" colspan="3">N/A</td>
                     <td class="table_elem">24.93</td>
                     <td class="table_elem">32.42</td>
